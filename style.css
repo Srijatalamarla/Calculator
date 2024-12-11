@@ -1,0 +1,82 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+:root {
+    --btn-height: 70px;
+    --btn-width: 70px;
+    --footer-height: 100px;
+}
+
+/* styling calculator */
+.top-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: calc(100vh - var(--footer-height));
+}
+
+.container {
+    background-color: blue;
+    height: 500px;
+    width: 400px;
+}
+
+.buttons-container {
+    display: grid;
+    /* rows - 5 */
+    grid-template-rows: repeat(5, 1fr);
+    /* columns - 4 */
+    grid-template-columns: repeat(4, 1fr);
+    gap: 1px;
+    padding: 10px;
+}
+
+
+.input-value {
+    height: 100%;
+    width: 100%;
+    background: none;
+    border: 2px solid black;
+    color: white;
+    font-size: 4rem;
+}
+
+
+.btn {
+    cursor: pointer;
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+    height: var(--btn-height);
+    width: 100%;
+    background-color: black;
+    color: white;
+    padding: 1px;
+    border: 3px solid rgb(85, 85, 85);
+    transition: all 1s ease;
+}
+
+.btn:hover {
+    background-color: rgb(45, 45, 45);
+}
+
+.result {
+    grid-column-start: 3;
+    grid-column-end: 5;
+}
+
+/* footer */
+footer {
+    position: fixed;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: var(--footer-height);
+    width: 100%;
+    background-color: black;
+    color: white;
+    top: calc(100vh - var(--footer-height));
+}
