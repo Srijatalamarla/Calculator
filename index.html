@@ -17,11 +17,12 @@
         <div class="top-container">
             <div class="container">
                 <div class="input-space">
-                    <input type="text" name="" id="" class="input-value" />
+                    <input type="text" name="" id="input-value" class="input-value" placeholder="0"
+                    onkeydown="handleInput(event)"/>
                 </div>
                 <section class="buttons-container">
-                    <div class="clear btn">AC</div>
-                    <div class="clear btn">CE</div>
+                    <div id="all-clear" class="clear btn">AC</div>
+                    <div id="only-clear" class="clear btn">CE</div>
                     <div class="decimal btn">.</div>
                     <div class="operators btn">/</div>
                     <div class="number btn">7</div>

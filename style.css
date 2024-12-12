@@ -6,6 +6,7 @@
 
 :root {
     --input-height: 150px;
+    --container-radius: 20px;
 }
 
 /* styling calculator */
@@ -14,10 +15,12 @@
     justify-content: center;
     align-items: center;
     height: 100vh;
+    width: 100vw;
 }
 
 .container {
     background-color: rgb(40, 40, 40);
+    border-radius: var(--container-radius);
     height: 500px;
     width: 400px;
     display: grid;
@@ -37,14 +40,19 @@
 }
 
 .input-value {
+    height: 100%;
+    width: 100%;
     background: none;
-    border: 2px solid black;
     color: white;
     font-size: 4rem;
     text-align: right;
-    line-height: 1;
+    border-radius: var(--container-radius);
+    border: none;
 }
 
+.input-value:focus {
+    outline: none;
+}
 
 .btn {
     cursor: pointer;
@@ -52,18 +60,38 @@
     justify-content: center;
     align-items: center;
     width: 100%;
-    background-color: black;
+    background-color: rgb(10, 10, 10);
     color: white;
     padding: 1px;
-    border: 3px solid rgb(85, 85, 85);
-    transition: all 0.5s ease;
+    border-radius: 10px;
+    margin: 1px 1px;
+    font-weight: 700;
+    /* pressed effect */
+    /* box-shadow: 5px 5px red; */
 }
 
 .btn:hover {
-    background-color: rgb(45, 45, 45);
+    background-color: rgb(85, 85, 85);
+}
+
+.clear {
+    color: aqua;
+}
+
+.operators {
+    background-color: blue;
+}
+
+.operators:hover {
+    background-color: rgb(0, 0, 125);
 }
 
 .result {
+    background-color: black;
     grid-column-start: 3;
     grid-column-end: 5;
+}
+
+.result:hover {
+    background-color: rgb(10, 10, 10);
 }
