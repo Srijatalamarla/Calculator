@@ -21,19 +21,19 @@ window.addEventListener('resize', handleKeyboardInput);
 
 function handleKeyboardInput() {
     if (window.innerWidth <= 500) {
-        // inputField.setAttribute('readonly', true);
-        inputField.addEventListener('keydown', preventKeyboardInput);
+        inputField.setAttribute('readonly', true);
+        // inputField.addEventListener('keydown', preventKeyboardInput);
     } else {
-        // inputField.removeAttribute('readonly');
-        inputField.removeEventListener('keydown', preventKeyboardInput);
+        inputField.removeAttribute('readonly');
+        // inputField.removeEventListener('keydown', preventKeyboardInput);
     }
 
     inputField.focus();
 }
 
-function preventKeyboardInput(event) {
-    event.preventDefault();
-}
+// function preventKeyboardInput(event) {
+//     event.preventDefault();
+// }
 
 function handleInput(event) {
     const validKeys = ['0', '1', '2', '3', '4', '5', '6', '7', '8', '9', 'Backspace', 'ArrowLeft', 'ArrowRight', '+', '-', '*', '/', '.'];
