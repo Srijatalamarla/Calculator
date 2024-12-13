@@ -13,9 +13,8 @@ let inputField;
 
 document.addEventListener('DOMContentLoaded', () => {
     inputField = document.getElementById('input-value');
-    inputField.focus();
-
     handleKeyboardInput();
+    inputField.focus();
 });
 
 window.addEventListener('resize', handleKeyboardInput);
@@ -26,6 +25,8 @@ function handleKeyboardInput() {
     } else {
         inputField.removeAttribute('readonly');
     }
+
+    inputField.focus();
 }
 
 function handleInput(event) {
