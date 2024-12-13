@@ -85,9 +85,9 @@ function evaluate(expression) {
         window.alert("Error: Cannot divide by zero");
         return "";
     }
-    else {
-        return result;
-    }
+    result = parseFloat(result.toFixed(2));
+
+    return result;
 }
 
 numberBtns.forEach((numberBtn) => {
