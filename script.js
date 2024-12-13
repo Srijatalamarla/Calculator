@@ -14,7 +14,19 @@ let inputField;
 document.addEventListener('DOMContentLoaded', () => {
     inputField = document.getElementById('input-value');
     inputField.focus();
+
+    handleKeyboardInput();
 });
+
+window.addEventListener('resize', handleKeyboardInput);
+
+function handleKeyboardInput() {
+    if (window.innerWidth <= 500) {
+        inputField.setAttribute('readonly', true);
+    } else {
+        inputField.removeAttribute('readonly');
+    }
+}
 
 function handleInput(event) {
     const validKeys = ['0', '1', '2', '3', '4', '5', '6', '7', '8', '9', 'Backspace', 'ArrowLeft', 'ArrowRight', '+', '-', '*', '/', '.'];
@@ -63,7 +75,7 @@ function isOperator(key) {
 function evaluate(expression) {
     let result = eval(expression);
     if (result === Infinity || result === -Infinity) {
-        window.alert("Cannot divide by zero");
+        window.alert("Error: Cannot divide by zero");
         return "";
     }
     else {
